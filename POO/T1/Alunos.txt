@@ -1,0 +1,9 @@
+---------------------------------------------------------
+
+ALUNO: GABRIEL PRANDO RA: 2039869
+ALUNO: VITOR OLIVEIRA DOS SANTOS RA: 2037904
+
+---------------------------------------------------------
+OBS: TRABALHO DISPONÍVEL EM REPOSITÓRIO PÚBLICO DO GITHUB A PARTIR DO DIA 15/10/2019 ATRAVÉS DO LINK:
+
+https://github.com/gprando/T1_POO
