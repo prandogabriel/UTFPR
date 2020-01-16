@@ -1,0 +1,4 @@
+gcc -c Lista.c
+gcc -c usa_lista.c
+gcc -o teste Lista.o usa_lista.o
+./teste

@@ -1,0 +1,13 @@
+3
+duma key
+suspense
+2000
+30.00
+lógica e álgebra de boole
+computação
+1999
+20.00
+desmistificando algoritmos
+computação
+2011
+40.00
