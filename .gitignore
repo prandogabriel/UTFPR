@@ -20,7 +20,7 @@
 # Precompiled Headers
 *.gch
 *.pch
-
+*/.vscode
 # Libraries
 *.lib
 *.a
