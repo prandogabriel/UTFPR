@@ -5,7 +5,7 @@
 
 
 
-## Matétias presentes no repositório:
+## Matérias presentes no repositório:
 
 - Algoritmos 1 - 2019.1 ( Emanoeli  )
 - Cálculo 3 - 2019.2 ( Delfino )
