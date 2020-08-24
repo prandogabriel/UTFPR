@@ -1,27 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int qtd_moedas(int v[], int troco){
-    int qtd = 0;
-    int i;
+int main()
+{
+  int i = 0;
+  int j = 0;
+  int troco;
+  int qtd_moedas;
+  int auxiliar;
 
-    for (i = 0; (troco > 0); i++){
-        qtd += troco / v[i];
-        troco = troco % v[i];
+  scanf("%d",&troco);
+  scanf("%d",&qtd_moedas);
+
+  int moedas[qtd_moedas];
+
+  while (i<qtd_moedas)
+  {
+    scanf("%d", &moedas[i]);
+    i++;
+  }
+
+  while (troco != 0)
+  {
+    auxiliar = troco + 1;
+    for (i = 0; i < qtd_moedas; i++)
+    {
+      if(troco/moedas[i]<= auxiliar && troco/moedas[i]!=0)
+      {
+        auxiliar = troco/moedas[i];
+        j=i;
+      }
     }
-
-
-    if (troco == 0)
-        return qtd;
-    else
-        return -1;
-}
-
-int main(){
-    int v[] = {100, 50, 25, 10, 5, 1};
-    int troco;
-    scanf("%d",&troco);
-    printf("%d",qtd_moedas(v, troco));
-
-    return 0;
-}
+    for (i = 0; i < auxiliar; i++)
+    {
+      printf("%d\n",moedas[j]);
+    }
+    troco-=moedas[j]*auxiliar;
+  }
+  return 0;
+  }
