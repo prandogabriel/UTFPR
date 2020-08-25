@@ -3,7 +3,7 @@
 
 int max(int capacity, int weights[], int values[], int number){
   int custos[capacity+1][number+2];
-  int valorArmazenado;
+  int value_stored;
   int best_0;
   int best_1;
   int i, j;
@@ -23,14 +23,14 @@ int max(int capacity, int weights[], int values[], int number){
         best_1 = values[j-2]+custos[i-weights[j-2]][j-1];
 
         if(best_0 > best_1){
-          valorArmazenado = best_0;
+          value_stored = best_0;
         } else {
-          valorArmazenado = best_1;
+          value_stored = best_1;
         }
       } else {
-        valorArmazenado = best_0;
+        value_stored = best_0;
       }
-      custos[i][j] = valorArmazenado;
+      custos[i][j] = value_stored;
     }
   }
 
