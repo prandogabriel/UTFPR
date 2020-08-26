@@ -8,4 +8,4 @@ Node * insert(Node *tree, int value);
 int delete(Node *tree, int value);
 void prefix(Node *tree);
 void posfix(Node *tree);
-void nodes_leaves(Node *tree);
+void node_leaves(Node *tree);

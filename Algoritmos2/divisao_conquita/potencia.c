@@ -3,18 +3,18 @@
 
 int potenciaInterativa(int a, int n){
 
-    int i, aux;
+  int i, aux;
 
-    if (n <= 0)
-        return 1;
-    else{
-        aux = a;
+  if (n <= 0)
+    return 1;
+  else{
+    aux = a;
 
-        for (i = 2; i <= n; i++)
-            aux = aux * a;
+    for (i = 2; i <= n; i++)
+      aux = aux * a;
 
-        return aux;
-    }
+    return aux;
+  }
 
 }
 

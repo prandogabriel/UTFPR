@@ -19,7 +19,7 @@ int main() {
 
 
 
-  nodes_leaves(no);
+  node_leaves(no);
 
   printf("\n");
   return 0;

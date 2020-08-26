@@ -106,12 +106,12 @@ void posfix(Node *tree) {
   }
 }
 
-void nodes_leaves(Node *tree) {
+void node_leaves(Node *tree) {
   if(tree != NULL && tree->left==NULL && tree->right==NULL)
     printf("%d ", tree->key);
   else if (tree != NULL){
-    nodes_leaves(tree->left);
-    nodes_leaves(tree->right);
+    node_leaves(tree->left);
+    node_leaves(tree->right);
   }
 }
 
