@@ -1,119 +1,21 @@
-#include <math.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-#define MAXTAM 100
 
-typedef struct item {
-  char nome[MAXTAM];
-  // demais campos
-} Item;
+typedef struct ItemL{
+    char nom[100];
+}ItemL;
 
-typedef struct pilha {
-  Item item[MAXTAM];
-  int topo;
-}Pilha;
+typedef struct Lista{
+    ItemL it[100];
+    int tam;
+}Lista;
 
-// criar uma pilha vazia
-Pilha * cria_pilha_vazia() {
-    Pilha *p = malloc(sizeof(Pilha));
-    p->topo = -1;
-    return p;
-}
-
-// retorna 1 se a lista está cheia ou 0 se não está cheia
-int verifica_pilha_cheia(Pilha *p) {
-    return p->topo == MAXTAM - 1;
-}
-
-// empilha
-void empilha(Pilha *p, int chave) {
-    if(verifica_pilha_cheia(p)){
-        printf("Erro: a pilha está cheia.\n");
-        return;
-    }
-    else {
-        Item novo_item;
-        novo_item.chave = chave;
-        p->topo++;
-        p->item[p->topo] = novo_item;
-    }
-}
-
-// imprime a pilha
-void imprime_pilha(Pilha *p) {
-    int i;
-    for(i = p->topo; i >= 0; i--)
-        printf("Chave: %d\n", p->item[i].chave);
-}
-
-// retorna 1 se a pilha está vazia ou 0 se não está vazia
-int verifica_pilha_vazia(Pilha *p) {
-    return p->topo == -1;
-}
-
-// desempilha
-void desempilha(Pilha *p) {
-    if (verifica_pilha_vazia(p)) {
-        printf("Erro: a pilha está vazia.\n");
-        return;
-    }
-    else {
-        p->topo--;
-    }
-}
-
-void libera_pilha(Pilha *p) {
-    free(p);
-}
-
-void contador (char v[], int n)
-{
-  int i, j, cont=0, contE=0;
-
-        for(i=0;i<n;i++)
-        {
-            if(v[i]==')' && cont == 0)
-              i=n;
-            else if (v[i]=='(')
-            {
-                cont++;
-                for(j=i+1;j<n;j++)
-                {
-                    if (v[j]==')')
-                    {
-                        cont--;
-                        v[j] = 'a';
-                    }
-                }
-                v[i] = 'a';
-
-            }
-            else if (v[i]==')')
-            {
-                contE++;
-            }
-
-
-        }
-
-
-
-
-    if(cont != 0 || contE != 0)
-    {
-        printf("incorrect\n");
-    }
-    else
-    {
-        printf("correct\n");
-    }
-}
 
 
 void criar( int n)
 {
-    Lista l;
+    Lista *l;
     int i;
     l = (Lista) malloc (sizeof(Lista));
     l->tam = n;
@@ -126,18 +28,49 @@ void criar( int n)
     for (i=0;i<n;i++)
     {
 
-        tam =  strlen(l->it[i].nom);
-        contador( l->it[i].nom, tam);
+      tam = bemFormada(l->it[i].nom);
+      if(tam==0)
+        printf("errada");
+      else
+        printf("certa");
     }
 }
 
 
+int bemFormada (char s[])
+{
+   char *pilha; int t;
+   int n, i;
+
+   n = strlen (s);
+   pilha = malloc(n * sizeof (char));
+   t = 0;
+   for (i = 0; s[i] != '\0'; ++i) {
+      // a pilha está armazenada em pilha[0..t-1]
+      switch (s[i]) {
+         case ')': if (t != 0 && pilha[t-1] == '(')
+                      --t;
+                   else return 0;
+                   break;
+         case ']': if (t != 0 && pilha[t-1] == '[')
+                      --t;
+                   else return 0;
+                   break;
+         default:  pilha[t++] = s[i];
+      }
+   }
+   free (pilha);
+   if (t == 0) return 1;
+   else return 0;
+}
+
+
+
 int main ()
 {
-  Pilha *p = cria_pilha_vazia();
-
     int n;
     scanf("%d", &n);
     criar(n);
-
 }
+
+
