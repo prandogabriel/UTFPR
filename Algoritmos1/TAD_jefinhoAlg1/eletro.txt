@@ -1,0 +1,5 @@
+3
+Ferro 30 3
+Chuveiro 60 0.5
+TV 5 12
+5

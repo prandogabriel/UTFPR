@@ -31,6 +31,7 @@ int potenciaDivisaoConquista(int a, int n){
 }
 
 int main() {
+
   printf("%d elevado a %d = %d\n", 2, 8, potenciaInterativa(2, 8));
   printf("%d elevado a %d = %d\n", 2, 8, potenciaDivisaoConquista(2, 8));
   return 0;
