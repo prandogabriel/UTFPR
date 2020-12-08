@@ -5,7 +5,7 @@ def ler_matriz(dimensao):
   for i in range(dimensao):
     linha = []
     for j in range(dimensao):
-      linha.append(input())
+      linha.append(int(input()))
 
     matriz.append(linha)
 
@@ -35,7 +35,7 @@ def reflexiva(matriz, dimensao):
   print('Reflexiva')
   return
 
-def transitiva(matriz, dimensao):
+def fechos_transitivos(matriz, dimensao):
   for k in range(dimensao):
     for i in range(dimensao):
       for j in range(dimensao):
@@ -43,6 +43,13 @@ def transitiva(matriz, dimensao):
   print('fechos transitivos')
   for i in range(dimensao):
     print(matriz[i])
+  return
+
+def transitiva(matriz1, matriz2):
+  if(np.allclose(matriz_potencia, matriz)):
+    print('Transitiva')
+    return
+  print('Não é transitiva')
   return
 
 # uma matriz nada mais é do que um vetor de vetores
@@ -55,12 +62,17 @@ def transitiva(matriz, dimensao):
 dimensao = int(input())
 
 matriz = ler_matriz(dimensao)
+# matriz = [[1,1,1],[1,1,1],[1,1,1]]
 
 print_matriz(matriz, dimensao)
 
 simetrica(matriz, dimensao)
 reflexiva(matriz, dimensao)
-#  a^2 é = a se encontrar algo que não existe no original ela não é transitiva
-transitiva(matriz, dimensao)
-# result = matrix(matriz)**2
-print(matrix(matriz)**2)
+matriz_potencia = np.matrix(matriz)**2
+
+matriz = np.array(matriz)
+#  a^2 é = a se a estiver contida em a^n então é transitiva
+transitiva(matriz, matriz_potencia)
+
+fechos_transitivos(matriz, dimensao)
+
