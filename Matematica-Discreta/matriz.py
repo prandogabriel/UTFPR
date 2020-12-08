@@ -1,3 +1,5 @@
+import numpy as np
+
 def ler_matriz(dimensao):
   matriz = []
   for i in range(dimensao):
@@ -58,4 +60,7 @@ print_matriz(matriz, dimensao)
 
 simetrica(matriz, dimensao)
 reflexiva(matriz, dimensao)
+#  a^2 é = a se encontrar algo que não existe no original ela não é transitiva
 transitiva(matriz, dimensao)
+# result = matrix(matriz)**2
+print(matrix(matriz)**2)
