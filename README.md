@@ -7,11 +7,12 @@
 
 ## Matérias presentes no repositório:
 
-- Algoritmos 1 - 2019.1 ( Emanoeli  )
+- Algoritmos 1 - 2019.1 ( Emanoeli )
 - Cálculo 3 - 2019.2 ( Delfino )
 - Cálculo Numérico - 2019.2 ( Vanderlei )
 - Programação Orientada a Objetos - 2019.2 ( Luciene )
-- Algoritmos 2 - 2020.1 ( Jefferson  )
+- Algoritmos 2 - 2020.1 ( Jefferson )
+- Banco 1 - 2020.2 ( Teixeira )
 
 <br/><br/>
 <p align="center">
@@ -32,7 +33,7 @@
 
 <br/>
 
-1. Abra o terminal do seu computador. Se estiver no Windows, pode ser o Prompt de Comando ou PowerShell. Caso use o WSL no Windows, use o Windows Terminal, usando o Ubuntu ou qualquer distribuição suportada pelo WSL. 
+1. Abra o terminal do seu computador. Se estiver no Windows, pode ser o Prompt de Comando ou PowerShell. Caso use o WSL no Windows, use o Windows Terminal, usando o Ubuntu ou qualquer distribuição suportada pelo WSL.
 2. Altere o diretório de trabalho atual para o local em que deseja ter o código do módulo salvo no seu computador.
 3. Faça um clone desse repositório rodando: <br> `git clone https://github.com/gprando/UTFPR`;
 4. Entre na pasta rodando pelo terminal: `cd UTFPR`;
@@ -61,5 +62,5 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 ---
 
 
-com  :heart: [Gabriel Prando](https://github.com/gprando)    
+com  :heart: [Gabriel Prando](https://github.com/gprando)
 
