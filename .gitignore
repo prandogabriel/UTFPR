@@ -5,7 +5,7 @@
 ### C ###
 # Prerequisites
 *.d
-
+./**/*ipynb_checkpoint*
 /**/test*
 
 # Object files
