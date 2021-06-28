@@ -13,6 +13,7 @@
 - Programação Orientada a Objetos - 2019.2 ( Luciene )
 - Algoritmos 2 - 2020.1 ( Jefferson )
 - Banco 1 - 2020.2 ( Teixeira )
+- Métodos de Aprendizagem - 2021.1 ( Dalcimar )
 
 <br/><br/>
 <p align="center">
