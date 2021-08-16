@@ -1,7 +1,7 @@
 
 # Created by https://www.gitignore.io/api/c,c++,java,matlab,python,java-web
 # Edit at https://www.gitignore.io/?templates=c,c++,java,matlab,python,java-web
-
+node_modules
 ### C ###
 # Prerequisites
 *.d
