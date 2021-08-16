@@ -12,8 +12,10 @@
 - Cálculo Numérico - 2019.2 ( Vanderlei )
 - Programação Orientada a Objetos - 2019.2 ( Luciene )
 - Algoritmos 2 - 2020.1 ( Jefferson )
-- Banco 1 - 2020.2 ( Teixeira )
+- Banco de dados 1 - 2020.2 ( Teixeira )
 - Métodos de Aprendizagem - 2021.1 ( Dalcimar )
+- Banco de dados 2 - 2021.1 ( Ives )
+- Sistemas de controle 1 - 2021.1 ( Kleiton )
 
 <br/><br/>
 <p align="center">
