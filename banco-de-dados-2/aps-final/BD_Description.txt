@@ -1,0 +1,27 @@
+Integrantes do Grupo:
+	Daniel Augusto Muller
+	Gabriel Prando
+	Maria Luiza de Freitas	
+	
+
+Descrição do Banco:
+	Em nosso Banco de Dados, escolhemos uma aplicação para
+controle básico de uma loja com produtos em estoque.
+
+	O Usuário deve ter cadastro no sistema, com nome, e-mail,
+telefone, senha e CPF.
+	Os Pedidos contém o valor final, método de pagamento,
+o local de entrega, o id do comprador e a data da compra.
+	Cada Ponto de Entrega deve ter uma cidade, estado, bairro,
+rua, número e CEP.
+	Os Detalhes do Pedido contém informações como o produto
+comprado, seu preço, quantidade e desconto se houver.
+	A classe Produto descreve cada item da loja com nome, preço
+unidade, categoria e foto.
+	O Estoque mantém o ID do Produto, preço, lote e quantidade.
+É atualizado a cada Pedido que contenha um de seus itens.
+
+    O Banco gera, através de uma função, uma tabela de auditoria para controle
+do estoque, a tabela: log_stock, contém um ID para a modificação, o nome do
+usuário que a fez, tipo de operação (INSERT, DELETE, UPDATE), a gravação antiga
+quando houver e data em que foi criada.
