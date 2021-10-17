@@ -1,4 +1,4 @@
-#include <msp430.h> 
+#include <msp430.h>
 
 
 void ini_P1_P2(void);
@@ -10,7 +10,7 @@ void main(void)
     unsigned long i = 0;
 
 	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
-	
+
 	ini_P1_P2();
 
 	do{
