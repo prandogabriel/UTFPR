@@ -46,6 +46,7 @@ img_norm =  transform.warp(img, tform, output_shape=(800, 300))
 plt.subplot(122)
 plt.imshow(img_norm)
 
+# Adicionando linha de impedimento
 x1, y1 = [250, 250], [790, 0]
 plt.plot(x1, y1, color='red',linewidth=2 )
 plt.show()
