@@ -1,0 +1,139 @@
+ip default-gateway 172.29.1.10
+
+# comandos router 3 e switch 3
+
+## switch
+
+enable
+
+configure t
+
+hostname S3-GP
+
+ip default-gateway 10.1.2.254
+
+interface vlan 1
+
+ip address 10.1.2.253 255.255.255.0
+
+no shutdown
+
+end
+
+write
+
+## router 1
+
+enable
+
+configure terminal
+
+interface fa1/0
+
+ip address 172.29.1.10 255.255.0.0
+ipv6 address FE80::1:10 link-local
+ipv6 address 2001:DB8:ACAD::1:10/64
+
+exit
+
+interface fa0/0
+
+ip address 192.168.3.2 255.255.255.252
+ipv6 address 2001:db8:acad:ff03::1/64
+
+exit
+
+interface fa0/1
+
+ip address 192.168.1.1 255.255.255.252
+ipv6 address 2001:db8:acad:ff01::1/64
+
+exit
+
+ip route 10.1.1.0 255.255.255.0 192.168.1.2 
+ip route  10.1.2.0 255.255.255.0 192.168.3.1
+ip route  192.168.2.0 255.255.255.252 192.168.1.2
+ipv6 route 2001:db8:acad::/64 2001:db8:acad:ff03::2
+ipv6 route 2001:db8:acad:1::/64 2001:db8:acad:ff02::1
+ipv6 route 2001:db8:acad:ff01::/64 2001:db8:acad:ff03::2
+
+## router 2
+
+enable
+
+configure terminal
+
+no ip route 172.29.0.0 255.255.0.0 192.168.1.1
+no ip route 192.168.1.0 255.255.255.252 192.168.2.1
+no ip route 172.29.0.0 255.255.0.0 192.168.2.1
+
+no ipv6 route 2001:DB8:ACAD::/64 2001:DB8:ACAD:FF00::1
+no ipv6 route 2001:DB8:ACAD:FF01::/64 2001:DB8:ACAD:FF02::1
+no ipv6 route 2001:DB8:ACAD::/64 2001:DB8:ACAD:FF02::1
+
+interface fa0/0
+
+ip address 192.168.1.2 255.255.255.252
+ipv6 address 2001:db8:acad:ff01::2/64
+
+exit
+
+interface fa0/1
+
+ip address 192.168.2.1 255.255.255.252
+ipv6 address 2001:db8:acad:ff02::1/64
+
+exit
+
+interface fa1/0
+
+ip address 10.1.1.254 255.255.255.0
+
+ipv6 address FE80::1:254 link-local
+ipv6 address 2001:db8:acad:1::254/64
+
+exit
+
+ip route 172.29.0.0 255.255.0.0 192.168.1.1
+ip route 10.1.2.0 255.255.255.0 192.168.2.2
+ip route 192.168.3.0 255.255.255.252 192.168.2.2
+
+ipv6 route 2001:db8:acad::/64 2001:db8:acad:ff01::1
+ipv6 route 2001:db8:acad:2::/64 2001:db8:acad:ff02::2
+ipv6 route  2001:db8:acad:ff03::/64 2001:db8:acad:ff02::2
+
+## router 3
+
+enable
+
+configure terminal
+
+interface fa0/0
+
+ip address 192.168.2.2 255.255.255.252
+ipv6 address 2001:db8:acad:ff02::2/64
+
+exit
+
+interface fa0/1
+
+ip address 192.168.3.1 255.255.255.252
+ipv6 address 2001:db8:acad:ff03::1/64
+
+exit
+
+interface fa1/0
+
+ip address 10.1.2.254 255.255.255.0
+
+ipv6 address FE80:2::254 link-local
+ipv6 address 2001:db8:acad:2::254/64
+
+exit
+
+ip route 172.29.0.0 255.255.0.0 192.168.3.2 
+ip route  10.1.1.0 255.255.255.0 192.168.2.1
+ip route  192.168.1.0 255.255.255.252 192.168.3.2
+ipv6 route 2001:db8:acad::/64 2001:db8:acad:ff03::2
+ipv6 route 2001:db8:acad:1::/64 2001:db8:acad:ff02::1
+ipv6 route 2001:db8:acad:ff01::/64 2001:db8:acad:ff03::2
