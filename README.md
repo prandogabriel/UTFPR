@@ -13,9 +13,15 @@
 - Programação Orientada a Objetos - 2019.2 ( Luciene )
 - Algoritmos 2 - 2020.1 ( Jefferson )
 - Banco de dados 1 - 2020.2 ( Teixeira )
+- Matemática discreta - 2020.2 ( Kathya )
 - Métodos de Aprendizagem - 2021.1 ( Dalcimar )
 - Banco de dados 2 - 2021.1 ( Ives )
 - Sistemas de controle 1 - 2021.1 ( Kleiton )
+- Sistemas de controle 2 - 2021.2 ( Cardoso )
+- Sistemas microcontrolados - 2021.2 ( Bertoti )
+- Redes de computadores 1 - 2021.2 ( Favarim )
+- Processamento de imagens - 2021.2 ( Dalcimar )
+- Sistemas operacionais - 2022.1 ( Dalcimar )
 
 <br/><br/>
 <p align="center">
