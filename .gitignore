@@ -51,14 +51,13 @@
 *.pdb
 
 # Kernel Module Compile Results
-*.mod*
+/**/run
 *.cmd
 .tmp_versions/
 modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-
 ### C++ ###
 # Prerequisites
 
@@ -70,7 +69,6 @@ dkms.conf
 # Compiled Dynamic libraries
 
 # Fortran module files
-*.mod
 *.smod
 
 # Compiled Static libraries
