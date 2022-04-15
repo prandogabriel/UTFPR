@@ -11,7 +11,6 @@ import (
 	"github.com/go-echarts/go-echarts/v2/opts"
 )
 
-// generate random data for bar chart
 func generateBarItems(threads, time []string) []opts.BarData {
 	items := make([]opts.BarData, 0)
 	for i := 0; i < len(threads); i++ {
