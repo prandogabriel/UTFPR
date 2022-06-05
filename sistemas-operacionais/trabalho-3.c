@@ -30,7 +30,7 @@ double parc[8*N_THREADS];
 double result = 0.0;
 int j=1;
 
-void* calcula_pi(void* i){
+void* calcula_pi_1(void* i){
 
     long tid = (long)i;
     int termos = N_TERMOS_SERIE/(N_THREADS*j);
@@ -43,11 +43,26 @@ void* calcula_pi(void* i){
     return 0;
 }
 
+
+void* calcula_pi_2(void* i){
+
+    long tid = (long)i;
+    int termos = N_TERMOS_SERIE/(N_THREADS*j);
+    int inicio = tid*termos;
+    int fim = tid*termos + termos;
+    int numerador = -1/3;
+	  for(int i = inicio; i < fim; i++){
+        parc[8*tid] += sqrt(12)*(pow(-1,i)/ ((2*i+1)*pow(3,i)));//(1/pow(16,i)) *((4/(8*i+1)) - (2/(8*i+4)) - (1/(8*i+5)) - (1/(8*i+6))); //
+    }
+    return 0;
+}
+
+
 int main(void){
 
     pthread_t threads[N_THREADS];
     int i;
-    FILE *out = fopen("./trabalho-3-plot/out.txt","w+");
+    FILE *out1 = fopen("./trabalho-3-plot/out_1.txt","w+");
 
     for(j=1; j<=N_THREADS; j*=2){
         result = 0.0;
@@ -58,7 +73,7 @@ int main(void){
 
         clock_gettime(CLOCK_MONOTONIC, &t1);
         for(i = 0; i < N_THREADS; i++)
-            pthread_create(&threads[i], NULL, calcula_pi, (void*)(intptr_t)i);
+            pthread_create(&threads[i], NULL, calcula_pi_1, (void*)(intptr_t)i);
 
         for(i = 0; i < N_THREADS; i ++){
 
@@ -69,7 +84,36 @@ int main(void){
         clock_gettime(CLOCK_MONOTONIC, &t2);
         double temp = (double)(t2.tv_sec - t1.tv_sec) + (t2.tv_nsec - t1.tv_nsec)/1E9;
         printf("N threads: %d\tValor de pi: %.50lf\tTempo: %.3f\n", j, (double)result, temp);
-        fprintf(out,"%d %.4f\n",j,temp);
+        fprintf(out1,"%d %.4f\n",j,temp);
     }
-    fclose(out);
+    fclose(out1);
+
+
+    // Segunda série
+
+    FILE *out2 = fopen("./trabalho-3-plot/out_2.txt","w+");
+
+    for(j=1; j<=N_THREADS; j*=2){
+        result = 0.0;
+        for(i = 0; i < N_THREADS; i++)
+        parc[8*i] = 0;
+
+        struct timespec t1, t2;
+
+        clock_gettime(CLOCK_MONOTONIC, &t1);
+        for(i = 0; i < N_THREADS; i++)
+            pthread_create(&threads[i], NULL, calcula_pi_2, (void*)(intptr_t)i);
+
+        for(i = 0; i < N_THREADS; i ++){
+
+            pthread_join(threads[i], NULL);
+            result += parc[8*i];
+
+        }
+        clock_gettime(CLOCK_MONOTONIC, &t2);
+        double temp = (double)(t2.tv_sec - t1.tv_sec) + (t2.tv_nsec - t1.tv_nsec)/1E9;
+        printf("N threads: %d\tValor de pi: %.50lf\tTempo: %.3f\n", j, (double)result, temp);
+        fprintf(out2,"%d %.4f\n",j,temp);
+    }
+    fclose(out2);
 }
