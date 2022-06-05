@@ -1,0 +1,69 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <pthread.h>
+#include <time.h>
+#include <math.h>
+
+#define N_THREADS 1 //N={1,2,4,8 e 16}
+double tam = 1000000000/N_THREADS;
+double resultado[N_THREADS], valor_PI=0;
+
+
+void* Calculo_PI(void* threadid)
+{
+
+    long thread;
+    thread = (long)threadid;
+    int i = 0;
+    for(i = (tam*thread); i<(thread+1)*tam; i++)
+    {
+      if(i%2 == 0)
+      {
+        resultado[thread]=resultado[thread] + 4/(2*i+1);
+      }
+      else
+      {
+        resultado[thread] = resultado[thread] - 4/(2*i+1);
+      }
+    }
+  pthread_exit(NULL);
+}
+
+void Calcula_Soma()
+{
+    for (int i = 0; i < N_THREADS; i++)
+   {
+      valor_PI = valor_PI + resultado[i];
+    }
+}
+
+int main (){
+
+  printf("Nro de threads %d : \n", N_THREADS );
+  pthread_t threads[N_THREADS];
+  long  j;
+  time_t tempo_inicial , tempo_final;
+  float tempo_Exec;
+  tempo_inicial = time(NULL);
+
+  for(j=0; j<N_THREADS; j++)
+  {
+    pthread_create(&threads[j], NULL, Calculo_PI,(void*)j);
+  }
+
+  for (j=0; j < N_THREADS; j++)
+  {
+    pthread_join(threads[j], NULL);
+  }
+
+  Calcula_Soma();
+
+  tempo_final = time(NULL);
+  tempo_Exec = difftime(tempo_final,tempo_inicial);
+  printf("Valor de pi: %f \n", valor_PI );
+  printf("Tempo de execucao: %f \n",tempo_Exec);
+
+  pthread_exit(NULL);
+
+}

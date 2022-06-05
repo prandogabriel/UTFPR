@@ -1,0 +1,57 @@
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+
+int main(void)
+{
+    pid_t pidE=0; 
+	pid_t pidS=0;
+	pid_t pidL=0;
+	pid_t pidY=0; 
+
+    printf("proc-W, pid %d, ppid %d, acaba de ser criado\n",getpid(), getppid()); // Cria W
+	
+	if((pidE = fork()) == 0)  ///Cria E
+    {
+        printf("proc-E, pid %d, ppid %d, acaba de ser criado\n",getpid(), getppid());
+
+        if((pidS = fork()) == 0) //Cria S
+        {
+            printf("proc-S, pid %d, ppid %d, acaba de ser criado\n",getpid(), getppid());
+
+			if(pidL = fork() == 0)// Cria L
+			{
+				printf("proc-L, pid %d, ppid %d, acaba de ser criado\n",getpid(), getppid());
+				printf("proc-L, pid %d, morreu\n",getpid()); //Mata L
+				exit(0);
+			}
+
+			wait();
+			printf("proc-S, pid %d, morreu\n",getpid()); //Mata S
+			exit(0);
+        
+		}
+		wait();
+		printf("proc-E, pid %d, morreu\n",getpid()); //Mata E
+		exit(0);
+		
+
+		
+	}
+	
+	if((pidY = fork()) == 0)  ///Cria Y
+    {
+        printf("proc-Y, pid %d, ppid %d, acaba de ser criado\n",getpid(), getppid());
+		printf("proc-Y, pid %d, morreu\n",getpid()); //Mata Y
+		exit(0);
+		
+	}
+	
+	
+
+
+	wait();
+	wait();
+	printf("proc-W, pid %d, morreu\n",getpid()); // Mata W
+	
+}
