@@ -27,9 +27,9 @@ Shared_Memory *sm;
 void iniciaSM(){
     int fd = shm_open(SHARED_M, O_RDWR|O_CREAT, S_IRUSR|S_IWUSR);
 
-    ftruncate(fd, sizeof(shm_t));
+    ftruncate(fd, sizeof(sem_t));
 
-    sm = mmap(NULL, sizeof(shm_t), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0);
+    sm = mmap(NULL, sizeof(sem_t), PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0);
 }
 
 void RetiraJavali(int g){

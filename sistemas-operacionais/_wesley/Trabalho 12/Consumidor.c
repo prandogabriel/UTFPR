@@ -52,7 +52,7 @@ void *Gaules(void *thr){
         sem_wait(&semaforo_3);
         sem_post(&semaforo_1);
 
-        RetiraJavali(gaules);
+        RetiraJavali(g);
         sem_wait(&semaforo_2);
 
         printf("Gaules %c(%d) come, faltam %d javalis\n", nome[g], g, retira->ct);
@@ -91,7 +91,7 @@ int main(){
     i=0;
     while(i < QTD_GAULESES){
         pthread_join(vaga[i], NULL);
-        i++
+        i++;
     }
 
     sem_destroy(&semaforo_1);

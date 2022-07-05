@@ -1,0 +1,27 @@
+{
+  "files.associations": {
+    ".sequelizerc": "javascript",
+    ".stylelintrc": "json",
+    ".prettierrc": "json",
+    "ormconfig.json": "database",
+    "tsconfig.json": "tune",
+    "*.proto": "3d",
+    "*.webpack.js": "webpack",
+    "trabalho-8-definicoes.h": "c",
+    "stdlib.h": "c",
+    "semaphore.h": "c",
+    "trabalho-7-definicoes.h": "c",
+    "unistd.h": "c",
+    "mman.h": "c",
+    "stat.h": "c"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "_wesley": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  }
+}
