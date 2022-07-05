@@ -24,6 +24,7 @@
 - Sistemas operacionais - 2022.1 ( Dalcimar )
 - Controle digital - 2022.1 ( Jean Patrick )
 - Oficina de integração - 2022.1 ( Denardin )
+- Computação Gráfica - 2022.1 ( Erick Oliveira Rodrigues )
 
 <br/><br/>
 <p align="center">
