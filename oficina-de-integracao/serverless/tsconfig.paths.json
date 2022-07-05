@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@functions/*": ["src/functions/*"],
+      "@services/*": ["src/services/*"],
+      "@repositories/*": ["src/repositories/*"],
+      "@entities/*": ["src/entities/*"],
+      "@utils/*": ["src/utils/*"],
+      "@mappers/*": ["src/mappers/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@enums/*": ["src/enums/*"]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+PATCH http://localhost:3000/dev/door HTTP/1.1
+content-type: application/json
+
+{
+    "status": "open"
+}

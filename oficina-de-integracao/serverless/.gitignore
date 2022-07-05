@@ -1,0 +1,16 @@
+# package directories
+node_modules
+.build
+.serverless
+.webpack
+jspm_packages
+*.log
+junit.*
+# Serverless directories
+.serverless
+coverage
+
+.eslintcache
+config/.dev.env.json
+.env
+/**/*.not.http

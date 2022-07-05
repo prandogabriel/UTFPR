@@ -1,0 +1,25 @@
+{
+  "files.associations": {
+    ".sequelizerc": "javascript",
+    ".stylelintrc": "json",
+    ".prettierrc": "json",
+    "ormconfig.json": "database",
+    "tsconfig.json": "tune",
+    "*.proto": "3d",
+    "*.webpack.js": "webpack",
+    "freertos.h": "c",
+    "param.h": "c",
+    "nvs_flash.h": "c",
+    "wifi_connections.h": "c",
+    "cam.h": "c",
+    "wifi.h": "c",
+    "button.h": "c",
+    "request.h": "c",
+    "setup_config.h": "c",
+    "esp_http_client.h": "c",
+    "socket.h": "c",
+    "mqtt.h": "c",
+    "cjson.h": "c",
+    "string": "c"
+  }
+}
