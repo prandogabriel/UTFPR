@@ -22,6 +22,8 @@
 - Redes de computadores 1 - 2021.2 ( Favarim )
 - Processamento de imagens - 2021.2 ( Dalcimar )
 - Sistemas operacionais - 2022.1 ( Dalcimar )
+- Controle digital - 2022.1 ( Jean Patrick )
+- Oficina de integração - 2022.1 ( Denardin )
 
 <br/><br/>
 <p align="center">
