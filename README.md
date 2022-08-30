@@ -25,6 +25,10 @@
 - Controle digital - 2022.1 ( Jean Patrick )
 - Oficina de integração - 2022.1 ( Denardin )
 - Computação Gráfica - 2022.1 ( Erick Oliveira Rodrigues )
+- Segurança Computacional - 2022.2 ( Erick Oliveira Rodrigues )
+- Sistemas Inteligentes - 2022.2 ( Dalcimar )
+- Sistemas Embarcados - 2022.2 ( Denardin )
+- Sistemas Distribuídos - 2022.2 ( Rista )
 
 <br/><br/>
 <p align="center">
