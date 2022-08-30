@@ -1,0 +1,3 @@
+[submodule "seguranca-computacional/trabalho-final-ecies-benchmarking"]
+	path = seguranca-computacional/trabalho-final-ecies-benchmarking
+	url = git@github.com:gprando55/ecies-benchmarking.git
