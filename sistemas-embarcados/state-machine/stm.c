@@ -4,9 +4,9 @@
 #define ETX 0x03
 #define MAX_BUFFER 1000
 
-STM *NewStateMachine()
+xSTM *NewStateMachine()
 {
-  STM *stm;
+  xSTM *stm;
   stm->state = ST_STX;
 
   loadActions(stm);
@@ -14,12 +14,12 @@ STM *NewStateMachine()
   return stm;
 }
 
-void Exec(STM *stm, unsigned char data)
+void Exec(xSTM *stm, unsigned char data)
 {
   stm->actions[stm->state](stm, data);
 }
 
-static void loadActions(STM *stm)
+static void loadActions(xSTM *stm)
 {
   stm->actions[ST_STX] = stSTX;
   stm->actions[ST_QTD] = stQtd;
@@ -28,7 +28,7 @@ static void loadActions(STM *stm)
   stm->actions[ST_ETX] = stETX;
 }
 
-static void stSTX(STM *sm, unsigned char data)
+static void stSTX(xSTM *sm, unsigned char data)
 {
   if (data == STX)
   {
@@ -38,13 +38,13 @@ static void stSTX(STM *sm, unsigned char data)
   }
 }
 
-static void stQtd(STM *sm, unsigned char data)
+static void stQtd(xSTM *sm, unsigned char data)
 {
   sm->qtdBuffer = data;
   sm->state = ST_DATA;
 }
 
-static void stData(STM *sm, unsigned char data)
+static void stData(xSTM *sm, unsigned char data)
 {
   sm->buffer[sm->indBuffer++] = data;
   sm->chkBuffer ^= data;
@@ -54,7 +54,7 @@ static void stData(STM *sm, unsigned char data)
   }
 }
 
-static void stChk(STM *sm, unsigned char data)
+static void stChk(xSTM *sm, unsigned char data)
 {
   if (data == sm->chkBuffer)
   {
@@ -66,7 +66,7 @@ static void stChk(STM *sm, unsigned char data)
   }
 }
 
-static void stETX(STM *sm, unsigned char data)
+static void stETX(xSTM *sm, unsigned char data)
 {
   if (data == ETX)
   {

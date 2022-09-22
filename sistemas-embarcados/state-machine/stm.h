@@ -1,6 +1,6 @@
-typedef struct StateMachine STM;
+typedef struct xStateMachine xSTM;
 
-typedef void (*Action)(STM *sm, unsigned char data);
+typedef void (*Action)(xSTM *sm, unsigned char data);
 
 /* possiveis estados */
 typedef enum
@@ -11,9 +11,9 @@ typedef enum
   ST_CHK,
   ST_ETX,
   ST_END
-} States;
+} xStates;
 
-struct StateMachine
+struct xStateMachine
 {
   States state;
   unsigned char buffer[MAX_BUFFER];
@@ -23,6 +23,6 @@ struct StateMachine
   Action actions[ST_END];
 };
 
-STM *NewStateMachine();
+xSTM *NewStateMachine();
 
-void Exec(STM *stm, unsigned char data);
+void Exec(xSTM *stm, unsigned char data);

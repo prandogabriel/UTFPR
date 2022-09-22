@@ -2,7 +2,7 @@
 #include"./stm.h"
 
 int main() {
-  STM *stm1 = NewStateMachine();
+  xSTM *stm1 = NewStateMachine();
 
   Exec(stm1, "");
   return 0;
