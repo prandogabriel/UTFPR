@@ -2,7 +2,7 @@
 
 #define STX 0x02
 #define ETX 0x03
-#define MAX_BUFFER 1000
+
 
 xSTM *NewStateMachine()
 {

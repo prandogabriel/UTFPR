@@ -1,3 +1,5 @@
+#define MAX_BUFFER 1000
+
 typedef struct xStateMachine xSTM;
 
 typedef void (*Action)(xSTM *sm, unsigned char data);
@@ -15,7 +17,7 @@ typedef enum
 
 struct xStateMachine
 {
-  States state;
+  xStates state;
   unsigned char buffer[MAX_BUFFER];
   unsigned char chkBuffer;
   int indBuffer;
