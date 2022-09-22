@@ -20,7 +20,7 @@
     "global": "^4.4.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
-    "moment-timezone": "^0.5.33",
+    "moment-timezone": "^0.5.35",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
