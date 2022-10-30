@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+service BetService {
+  rpc RegisterBet (RegisterBetRequest) returns (RegisterBetReply) {}
+  rpc DrawBet (DrawBetRequest) returns (DrawBetReply) {}
+}
+
+message DrawBetRequest {}
+
+message DrawBetReply {
+  string message = 1;
+}
+
+message RegisterBetRequest {
+  string nickname = 1;
+  string name = 2;
+  float amount = 3;
+  string animal = 4;
+}
+
+message RegisterBetReply {
+  string message = 1;
+}
