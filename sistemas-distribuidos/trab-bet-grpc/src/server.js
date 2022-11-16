@@ -19,20 +19,23 @@ function RegisterBet({ request }, callback) {
 }
 
 
+
+
 function DrawBet(_, callback) {
   const drawnAnimal = Math.floor(Math.random() * 25)
   const animal = animals[drawnAnimal];
 
-  const filteredBets = bets.filter(b => b.animal = animal);
+  const filteredBets = bets.filter(b => b.animal === animal);
 
-  const totalAmount = bets.reduce((acc, cur) => acc + cur.amount, 0);
+  const totalAmount =  bets.reduce((acc, cur) => acc + cur.amount, 0);
   const totalPeopleDrawn = filteredBets.length;
 
-  console.log(totalPeopleDrawn, "apostas ganhadoras, de um total de ", bets.length, "apostas");
+  console.log(totalPeopleDrawn, "apostas ganhadoras, de um total de ", bets.length, "apostas \n");
 
   let message = "Animal sorteado foi: " + animal + "um total de ganhadores: " + totalPeopleDrawn;
 
-  message = totalPeopleDrawn > 0 ? message + "cada aposta recebe " + totalAmount / totalPeopleDrawn : message;
+
+  message = totalPeopleDrawn > 0 ? message + "\nCada aposta recebe " + totalAmount / totalPeopleDrawn : message;
 
   return callback(null, { message });
 }
