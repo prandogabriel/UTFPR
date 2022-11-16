@@ -11,8 +11,8 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-goog.exportSymbol('proto.DrawnBetReply', null, global);
-goog.exportSymbol('proto.DrawnBetRequest', null, global);
+goog.exportSymbol('proto.RaffleBetReply', null, global);
+goog.exportSymbol('proto.RaffleBetRequest', null, global);
 goog.exportSymbol('proto.RegisterBetReply', null, global);
 goog.exportSymbol('proto.RegisterBetRequest', null, global);
 
@@ -26,12 +26,12 @@ goog.exportSymbol('proto.RegisterBetRequest', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.DrawnBetRequest = function(opt_data) {
+proto.RaffleBetRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.DrawnBetRequest, jspb.Message);
+goog.inherits(proto.RaffleBetRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.DrawnBetRequest.displayName = 'proto.DrawnBetRequest';
+  proto.RaffleBetRequest.displayName = 'proto.RaffleBetRequest';
 }
 
 
@@ -46,8 +46,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.DrawnBetRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.DrawnBetRequest.toObject(opt_includeInstance, this);
+proto.RaffleBetRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.RaffleBetRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -56,11 +56,11 @@ proto.DrawnBetRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.DrawnBetRequest} msg The msg instance to transform.
+ * @param {!proto.RaffleBetRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.DrawnBetRequest.toObject = function(includeInstance, msg) {
+proto.RaffleBetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -76,23 +76,23 @@ proto.DrawnBetRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.DrawnBetRequest}
+ * @return {!proto.RaffleBetRequest}
  */
-proto.DrawnBetRequest.deserializeBinary = function(bytes) {
+proto.RaffleBetRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.DrawnBetRequest;
-  return proto.DrawnBetRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.RaffleBetRequest;
+  return proto.RaffleBetRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.DrawnBetRequest} msg The message object to deserialize into.
+ * @param {!proto.RaffleBetRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.DrawnBetRequest}
+ * @return {!proto.RaffleBetRequest}
  */
-proto.DrawnBetRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.RaffleBetRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -112,9 +112,9 @@ proto.DrawnBetRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.DrawnBetRequest.prototype.serializeBinary = function() {
+proto.RaffleBetRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.DrawnBetRequest.serializeBinaryToWriter(this, writer);
+  proto.RaffleBetRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -122,11 +122,11 @@ proto.DrawnBetRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.DrawnBetRequest} message
+ * @param {!proto.RaffleBetRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.DrawnBetRequest.serializeBinaryToWriter = function(message, writer) {
+proto.RaffleBetRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 
@@ -142,12 +142,12 @@ proto.DrawnBetRequest.serializeBinaryToWriter = function(message, writer) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.DrawnBetReply = function(opt_data) {
+proto.RaffleBetReply = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.DrawnBetReply, jspb.Message);
+goog.inherits(proto.RaffleBetReply, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.DrawnBetReply.displayName = 'proto.DrawnBetReply';
+  proto.RaffleBetReply.displayName = 'proto.RaffleBetReply';
 }
 
 
@@ -162,8 +162,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.DrawnBetReply.prototype.toObject = function(opt_includeInstance) {
-  return proto.DrawnBetReply.toObject(opt_includeInstance, this);
+proto.RaffleBetReply.prototype.toObject = function(opt_includeInstance) {
+  return proto.RaffleBetReply.toObject(opt_includeInstance, this);
 };
 
 
@@ -172,11 +172,11 @@ proto.DrawnBetReply.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.DrawnBetReply} msg The msg instance to transform.
+ * @param {!proto.RaffleBetReply} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.DrawnBetReply.toObject = function(includeInstance, msg) {
+proto.RaffleBetReply.toObject = function(includeInstance, msg) {
   var f, obj = {
     message: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -192,23 +192,23 @@ proto.DrawnBetReply.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.DrawnBetReply}
+ * @return {!proto.RaffleBetReply}
  */
-proto.DrawnBetReply.deserializeBinary = function(bytes) {
+proto.RaffleBetReply.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.DrawnBetReply;
-  return proto.DrawnBetReply.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.RaffleBetReply;
+  return proto.RaffleBetReply.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.DrawnBetReply} msg The message object to deserialize into.
+ * @param {!proto.RaffleBetReply} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.DrawnBetReply}
+ * @return {!proto.RaffleBetReply}
  */
-proto.DrawnBetReply.deserializeBinaryFromReader = function(msg, reader) {
+proto.RaffleBetReply.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -232,9 +232,9 @@ proto.DrawnBetReply.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.DrawnBetReply.prototype.serializeBinary = function() {
+proto.RaffleBetReply.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.DrawnBetReply.serializeBinaryToWriter(this, writer);
+  proto.RaffleBetReply.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -242,11 +242,11 @@ proto.DrawnBetReply.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.DrawnBetReply} message
+ * @param {!proto.RaffleBetReply} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.DrawnBetReply.serializeBinaryToWriter = function(message, writer) {
+proto.RaffleBetReply.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMessage();
   if (f.length > 0) {
@@ -262,13 +262,13 @@ proto.DrawnBetReply.serializeBinaryToWriter = function(message, writer) {
  * optional string message = 1;
  * @return {string}
  */
-proto.DrawnBetReply.prototype.getMessage = function() {
+proto.RaffleBetReply.prototype.getMessage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.DrawnBetReply.prototype.setMessage = function(value) {
+proto.RaffleBetReply.prototype.setMessage = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 

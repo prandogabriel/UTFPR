@@ -21,27 +21,27 @@ function RegisterBet({ request }, callback) {
 
 
 
-function DrawnBet(_, callback) {
-  const drawnAnimal = Math.floor(Math.random() * 25)
-  const animal = animals[drawnAnimal];
+function RaffleBet(_, callback) {
+  const raffleAnimal = Math.floor(Math.random() * 25)
+  const animal = animals[raffleAnimal];
 
   const filteredBets = bets.filter(b => b.animal === animal);
 
   const totalAmount =  bets.reduce((acc, cur) => acc + cur.amount, 0);
-  const totalPeopleDrawn = filteredBets.length;
+  const totalPeopleRaffle = filteredBets.length;
 
-  console.log(totalPeopleDrawn, "apostas ganhadoras, de um total de ", bets.length, "apostas \n");
+  console.log(totalPeopleRaffle, "apostas ganhadoras, de um total de ", bets.length, "apostas \n");
 
-  let message = "Animal sorteado foi: " + animal + "um total de ganhadores: " + totalPeopleDrawn;
+  let message = "Animal sorteado foi: " + animal + "um total de ganhadores: " + totalPeopleRaffle;
 
 
-  message = totalPeopleDrawn > 0 ? message + "\nCada aposta recebe " + totalAmount / totalPeopleDrawn : message;
+  message = totalPeopleRaffle > 0 ? message + "\nCada aposta recebe " + totalAmount / totalPeopleRaffle : message;
 
   return callback(null, { message });
 }
 
 const server = new grpc.Server()
-server.addService(BetDefinition.BetService.service, { RegisterBet, DrawnBet })
+server.addService(BetDefinition.BetService.service, { RegisterBet, RaffleBet })
 
 server.bind('0.0.0.0:50051', grpc.ServerCredentials.createInsecure())
 server.start()

@@ -2,12 +2,12 @@ syntax = "proto3";
 
 service BetService {
   rpc RegisterBet (RegisterBetRequest) returns (RegisterBetReply) {}
-  rpc DrawnBet (DrawnBetRequest) returns (DrawnBetReply) {}
+  rpc RaffleBet (RaffleBetRequest) returns (RaffleBetReply) {}
 }
 
-message DrawnBetRequest {}
+message RaffleBetRequest {}
 
-message DrawnBetReply {
+message RaffleBetReply {
   string message = 1;
 }
 
