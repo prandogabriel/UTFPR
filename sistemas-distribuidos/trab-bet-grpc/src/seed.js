@@ -8,7 +8,6 @@ const BetDefinition = grpc.loadPackageDefinition(protoObject)
 
 const client = new BetDefinition.BetService('localhost:50051', grpc.credentials.createInsecure());
 
-// import { faker } from '@faker-js/faker/locale/de';
 
 const animals = ['Avestruz', 'Águia', 'Burro', 'Borboleta', 'Cachorro', 'Cabra', 'Carneiro', 'Camelo', 'Cobra', 'Coelho', 'Cavalo', 'Elefante', 'Galo', 'Gato', 'Jacaré', 'Leão', 'Macaco', 'Porco', 'Pavão', 'Peru', 'Touro', 'Tigre', 'Urso', 'Veado', 'Vaca'];
 

@@ -24,9 +24,9 @@ if(action === "register") {
   })
 }
 
-// node src/client.js --action draw
-if(action === "draw") {
-  client.drawBet({}, (err, response) => {
+// node src/client.js --action drawn
+if(action === "drawn") {
+  client.drawnBet({}, (err, response) => {
     console.log(response)
     if (err) throw err
   })

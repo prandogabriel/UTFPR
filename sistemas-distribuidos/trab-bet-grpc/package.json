@@ -5,8 +5,7 @@
   "scripts": {
     "start:server": "nodemon src/server.js",
     "start:client": "nodemon src/client.js",
-    "compile": "protoc --js_out=import_style=commonjs,binary:. proto/notes.proto",
-    "compile:web": "protoc --js_out=import_style=commonjs,binary:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:. proto/notes.proto",
+    "compile": "protoc --js_out=import_style=commonjs,binary:. proto/bet.proto",
     "bundle": "webpack -o ./web/dist ./web/client.js"
   },
   "author": "",

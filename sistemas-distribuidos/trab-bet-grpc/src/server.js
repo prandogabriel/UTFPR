@@ -21,7 +21,7 @@ function RegisterBet({ request }, callback) {
 
 
 
-function DrawBet(_, callback) {
+function DrawnBet(_, callback) {
   const drawnAnimal = Math.floor(Math.random() * 25)
   const animal = animals[drawnAnimal];
 
@@ -41,7 +41,7 @@ function DrawBet(_, callback) {
 }
 
 const server = new grpc.Server()
-server.addService(BetDefinition.BetService.service, { RegisterBet, DrawBet })
+server.addService(BetDefinition.BetService.service, { RegisterBet, DrawnBet })
 
 server.bind('0.0.0.0:50051', grpc.ServerCredentials.createInsecure())
 server.start()
