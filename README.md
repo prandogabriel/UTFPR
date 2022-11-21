@@ -29,6 +29,7 @@
 - Sistemas Inteligentes - 2022.2 ( Dalcimar )
 - Sistemas Embarcados - 2022.2 ( Denardin )
 - Sistemas Distribuídos - 2022.2 ( Rista )
+- Estágio Obrigatório (Convalidação atividade profissional) - 2022.2 ( Orientadora: Viviane )
 
 <br/><br/>
 <p align="center">
