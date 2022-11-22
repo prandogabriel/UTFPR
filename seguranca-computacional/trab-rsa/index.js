@@ -1,22 +1,31 @@
-const { generatePrime } = require("./utils/prime");
-const { decrypt, encrypt, genKeyPair } = require("./rsa");
+const { primeFactory } = require("./utils/prime");
+const { RSA } = require("./rsa");
 
-const {p, q} =  generatePrime();
+const MESSAGE = process.env.MESSAGE || "Mensagem a ser criptografada com RSA";
 
-console.log({p, q});
+console.log("gerando números primos aleatórios")
 
-console.log("Generating your public/private key-pairs now . . .");
+const p = primeFactory();
+const q = primeFactory();
 
-const {public, private} = genKeyPair(p, q); //# ((133,253), (177, 253))
+console.log("primos gerados ", { p, q });
 
-console.log("Your public key is ", public, " and your private key is ", private);
+console.log("instanciando classe RSA");
+const rsa = new RSA(p, q)
 
-const message = "Meu";// # input("Enter a message to encrypt with your public key: ")
-const encryptedMsg = encrypt(public, message);
 
-console.log("Your encrypted message is: ", encryptedMsg); //# ''.join(map(lambda x: str(x), encrypted_msg)))
-console.log("Decrypting message with private key ", private, " . . .");
-console.log("Your message is: ", decrypt(private, encryptedMsg));
+console.log("gerando chaves");
 
-console.log("======================== END =================================");
-console.log("==============================================================");
+const { public, private } = rsa.genKeyPair();
+
+console.log("chaves geradas ", {public, private} );
+
+
+
+console.log("Encriptando ");
+const ciphertext = RSA.encrypt(public, MESSAGE);
+console.log("Mensagem criptografada -> ", ciphertext);
+
+const originalMessage = RSA.decrypt(private, ciphertext);
+console.log("Mensagem Descriptografada ", RSA.decrypt(private, ciphertext));
+

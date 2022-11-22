@@ -16,17 +16,13 @@ function isPrime(n) {
   return true;
 }
 
-function generatePrime() {
-  let p =  getRandom(3, 256);
-  let q = getRandom(3, 256);
+function primeFactory() {
+  let prime = getRandom(3, 2048);
 
-  while (!isPrime(p)) {
-    p = getRandom(3, 256);
+  while (!isPrime(prime)) {
+    prime = getRandom(3, 2048);
   }
-  while (!isPrime(q)) {
-    q = getRandom(3, 256);
-  }
-  return { p, q };
+  return prime;
 }
 
-module.exports = { isPrime, generatePrime };
+module.exports = { isPrime, primeFactory };

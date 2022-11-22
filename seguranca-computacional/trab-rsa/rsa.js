@@ -1,57 +1,62 @@
-const { gcd } = require("mathjs");
+const { pow, customGcd } = require("./utils/math");
 
-function pow(base, exp, mod) {
-  if (exp == 0) return 1;
-  if (exp % 2 == 0) {
-    return Math.pow(pow(base, (exp / 2), mod), 2) % mod;
-  }
-  else {
-    return (base * pow(base, (exp - 1), mod)) % mod;
-  }
-}
 
-function findD(e, phi_value) {
-  let d = 0;
+class RSA {
+  #p;
+  #q;
 
-  while ((d * e) % phi_value != 1) {
-    d += 1;
+  constructor(p, q) {
+    this.#p = p;
+    this.#q = q;
   }
 
-  return d;
-}
+  #findD(e, phi_value) {
+    let d = 0;
 
-function genKeyPair(p, q) {
-  let phi = (p - 1) * (q - 1);
-  let e = 2;
-  for (let i = 2; i < phi; i++) {
-    if (gcd(i, phi) === 1) e = i
+    while ((d * e) % phi_value != 1) {
+      d += 1;
+    }
+    return d;
   }
-  d = findD(e, phi);
 
-  return { public: { key: e, n: p * q }, private: { key: d, n: p * q } };
+  genKeyPair() {
+    let phi = (this.#p - 1) * (this.#q - 1);
+    let e = 2;
+    for (let i = 2; i < phi; i++) {
+      if (customGcd(i, phi) === 1) e = i
+    }
+    const d = this.#findD(e, phi);
+
+    return { public: { key: e, n: this.#p * this.#q }, private: { key: d, n: this.#p * this.#q } };
+  }
+
+
+  static encrypt(publicKey, message) {
+    const { key, n } = publicKey;
+    const letters = message.split("").map(c => c.charCodeAt(0));
+    const ciphertext = [];
+    letters.forEach(letter => {
+      ciphertext.push(pow(letter, key, n));
+    });
+
+    return ciphertext
+  }
+
+  static decrypt(privateKey, messageArray) {
+    const { key, n } = privateKey;
+    const text = [];
+
+    messageArray.forEach(letter => {
+      text.push(String.fromCharCode(pow(letter, key, n)));
+    });
+
+    return text.join("");
+  }
+
 }
 
 
-function encrypt(public, message) {
-  const { key, n } = public;
-  const letters = message.split("").map(c => c.charCodeAt(0));
-  const ciphertext = [];
-  letters.forEach(letter => {
-    ciphertext.push(pow(letter, key, n));
-  });
 
-  return ciphertext
-}
 
-function decrypt(private, messageArray) {
-  const { key, n } = private;
-  const text = [];
 
-  messageArray.forEach(letter => {
-    text.push(String.fromCharCode(pow(letter, key, n)));
-  });
-
-  return text.join("");
-}
-
-module.exports = { genKeyPair, encrypt, decrypt }
+module.exports = { RSA }
