@@ -16,7 +16,7 @@
     "@aws-sdk/util-dynamodb": "^3.23.0",
     "aws-sdk": "^2.1073.0",
     "axios": "^0.26.1",
-    "class-validator": "^0.13.1",
+    "class-validator": "^0.14.0",
     "global": "^4.4.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
